@@ -1,0 +1,46 @@
+button{
+    margin-top: 1rem;
+}
+
+
+   
+  fieldset {
+    margin-bottom: 15px;
+    padding: 10px;
+  }
+   
+  legend {
+    padding: 0px 3px;
+    font-weight: bold;
+    font-variant: small-caps;
+  }
+   
+  label {
+    width: 110px;
+    display: inline-block;
+    vertical-align: top;
+    margin: 6px;
+  }
+   
+  em {
+    font-weight: bold;
+    font-style: normal;
+    color: #f00;
+  }
+   
+  input:focus {
+    background: #eaeaea;
+  }
+   
+  input {
+    width: 249px;
+  }
+   
+.error{
+    color: red;
+}
+   
+  input[type=submit] {
+    width: 150px;
+    padding: 10px;
+  }

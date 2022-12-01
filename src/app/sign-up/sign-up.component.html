@@ -1,0 +1,47 @@
+<h2>05 - Les formulaires : templates driven forms</h2>
+
+<section>
+    <form #signUp="ngForm" (ngSubmit)="signUp.valid && onSubmit()" >
+
+        <fieldset>
+            <legend>Contact</legend>
+            <div>
+                <label for="firstname">Prénom<em>*</em></label>
+                <input id="firstname" name="firstname" type="text" [(ngModel)]="user.firstname" #firstname = "ngModel" placeholder="Prénom" required minlength="3" maxlength="15">
+            </div>
+            <div class="error" *ngIf="firstname.errors && signUp.submitted">
+                <span *ngIf="firstname.errors?.required">Le prénom est requis</span>
+                <span *ngIf="firstname.errors?.minlength">La longueur maximale doit être supérieure à 3</span>
+            </div>
+            
+            <div>
+                <label for="lastname">Nom<em>*</em></label>
+                <input id="lastname" name="lastname" type="text" [(ngModel)]="user.lastname" #lastname = "ngModel" placeholder="Nom de famille" required minlength="3" maxlength="15">
+            </div>
+            <div class="error" *ngIf="lastname.errors && signUp.submitted">
+                <span *ngIf="lastname.errors?.required">Le nom est requis</span>
+                <span *ngIf="lastname.errors?.minlength">La longueur maximale doit être supérieure à 3</span>
+            </div>
+            <div>
+                <label for="email">Email <em>*</em></label>
+                <input id="email" name="email" type="email" [(ngModel)]="user.email" #email = "ngModel" placeholder="prenom.nom@domaine.com" required="" >
+            </div>
+            <div class="error" *ngIf="email.errors && signUp.submitted">
+                <span *ngIf="email.errors?.required">L'email est requis</span>
+                <span *ngIf="email.errors.email">L'email est invalide</span>
+            </div>
+            
+            <div>
+                <label for="password">Password<em>*</em></label>
+                <input id="password" name="password" type="text" [(ngModel)]="user.password" placeholder="password" required minlength="3" maxlength="15">
+            </div>
+            <button type="reset">Restaurer</button>
+            <button type="submit">Sauvegarder</button>
+        </fieldset>
+        <!-- Message d'erreurs de l'input title -->
+  
+    </form>
+</section>
+
+
+
