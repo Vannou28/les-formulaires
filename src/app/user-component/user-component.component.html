@@ -1,0 +1,37 @@
+
+<h2>14 - Les formulaires : Reactive Form et FormControl</h2>
+
+<div>
+    <fieldset>
+        <legend>Contact</legend>
+        <div class = "container">
+            <label>
+                Username: <input type="text" [formControl]="username" >
+            </label>
+            <label>
+                Email: <input type="text" [formControl]="email">
+            </label>
+            <label>
+                mdp: <input type="text" [formControl]="mdp">
+            </label>
+            <label>
+                Adress: <input type="text" [formControl]="adress">
+            </label>
+            <label>
+                CP: <input type="text" [formControl]="cp">
+                Ville : <input type="text" [formControl]="city">
+            </label>
+            <button type="submit" (click)="SaveProfile();">Inscription</button>
+        </div>
+    </fieldset>
+</div>
+
+<div>
+    <ul *ngIf="isSave">
+        <li>Username : {{ user.username }}</li>
+        <li>Email : {{ email.value }}</li>
+        <li>mdp : {{ mdp.value }}</li>
+        <li>Adress : {{ adress.value }}</li>
+    </ul>
+
+</div>

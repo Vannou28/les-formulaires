@@ -1,0 +1,11 @@
+label {
+    margin: 6px;
+  }
+
+  .container{
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+
+    
+  }
