@@ -7,6 +7,7 @@ import { FormBuilder, FormsModule } from '@angular/forms';
 import { SearchMovieComponent } from './search-movie/search-movie.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UserComponentComponent } from './user-component/user-component.component';
+import { UserComponentChal15Component } from './user-component-chal15/user-component-chal15.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { UserComponentComponent } from './user-component/user-component.componen
     AppComponent,
     SignUpComponent,
     SearchMovieComponent,
-    UserComponentComponent
+    UserComponentComponent,
+    UserComponentChal15Component
   ],
   imports: [
     BrowserModule,

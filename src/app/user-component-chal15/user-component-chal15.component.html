@@ -1,0 +1,45 @@
+
+<h2>15 - Les formulaires : Reactive Form et FormGroup</h2>
+
+<div>
+    <fieldset>
+        <legend>Contact</legend>
+        <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+            <div class = "container">
+                <div formGroupName="credentials">
+                    <label>
+                        Email: <input type="text" formGroupName="email">
+                    </label>
+                    <label>
+                        mdp: <input type="text" formGroupName="mdp">
+                    </label>
+                </div>
+
+                <label>
+                    Username: <input type="text" formGroupName="username" >
+                </label>
+
+                <label>
+                    Adress: <input type="text" formGroupName="adress">
+                </label>
+                <label>
+                    CP: <input type="text" formGroupName="cp">
+                    Ville : <input type="text" formGroupName="city">
+                </label>
+
+                <button type="submit" [disabled]="!userForm.valid">Inscription</button>
+
+            </div>
+        </form>
+    </fieldset>
+</div>
+
+<div>
+    <ul *ngIf="isSave">
+        <li>Username : {{ user.username }}</li>
+        <li>Email : {{ user.email }}</li>
+        <li>mdp : {{ user.password }}</li>
+        <li>Adress : {{ user.adress }}</li>
+    </ul>
+
+</div>

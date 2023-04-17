@@ -23,5 +23,6 @@ export class UserComponentComponent {
     SaveProfile() {
         this.isSave = true;
         this.user = new UserProfile(this.username.value,this.email.value,this.mdp.value,this.adress.value,this.cp.value,this.city.value);
+
     }
 }
