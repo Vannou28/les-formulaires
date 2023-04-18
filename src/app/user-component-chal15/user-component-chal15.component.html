@@ -8,26 +8,37 @@
             <div class = "container">
                 <div formGroupName="credentials">
                     <label>
-                        Email: <input type="text" formGroupName="email">
+                        Username: <input type="text" formControlName="username" >
                     </label>
                     <label>
-                        mdp: <input type="text" formGroupName="mdp">
+                        Email: <input type="text" formControlName="email">
+                        {{ userForm.get('credentials.email')?.errors?.['rules'] }}
+                        <div *ngIf="userForm.get('credentials.email')?.errors && !userForm.get('credentials.email')?.pristine" class="error-msg">
+                            <div [hidden]="!userForm.get('credentials.email')?.errors?.['required']">password is required.</div>
+                            <div [hidden]="!userForm.get('credentials.email')?.invalid">email is invalid.</div>
+                        </div>
+                    </label>
+                    <label>
+                        mdp: <input type="password" formControlName="mdp">
+                        {{ userForm.get('credentials.mdp')?.errors?.['rules'] }}
+                        <div *ngIf="userForm.get('credentials.mdp')?.errors && !userForm.get('credentials.mdp')?.pristine" class="error-msg">
+                            <div [hidden]="!userForm.get('credentials.mdp')?.errors?.['required']">password is required.</div>
+                            <div [hidden]="!userForm.get('credentials.mdp')?.invalid">password is invalid.</div>
+                        </div>
                     </label>
                 </div>
 
-                <label>
-                    Username: <input type="text" formGroupName="username" >
-                </label>
-
-                <label>
-                    Adress: <input type="text" formGroupName="adress">
-                </label>
-                <label>
-                    CP: <input type="text" formGroupName="cp">
-                    Ville : <input type="text" formGroupName="city">
-                </label>
-
-                <button type="submit">Inscription</button>
+   
+                <div formGroupName="address">
+                    <label>
+                        Adress: <input type="text" formControlName="adress">
+                    </label>
+                    <label>
+                        CP: <input type="text" formControlName="cp">
+                        Ville : <input type="text" formControlName="city">
+                    </label>
+                </div>
+                <button type="submit" >Inscription</button>
 
             </div>
         </form>
