@@ -13,17 +13,15 @@ export class UserComponentChal15Component {
     isSave : boolean= false;
 
     userForm = new FormGroup({
-        
-        
         credentials: new FormGroup({
-            email: new FormControl('vannier.vannou@gmail.com'),
-            mdp: new FormControl('klqHGSFK'),
+            email: new FormControl(''),
+            mdp: new FormControl(''),
         }),
-        username: new FormControl('vannou'),
-        adress: new FormControl('rue de la forge'),
-        cp: new FormControl('45000'),
-        city: new FormControl('ORLEANS'),
-    })
+        username: new FormControl(''),
+        adress: new FormControl(''),
+        cp: new FormControl(''),
+        city: new FormControl(''),
+    });
 
 
     onSubmit() {
@@ -36,5 +34,6 @@ export class UserComponentChal15Component {
             this.userForm.value.cp,
             this.userForm.value.city
             );
+            console.log(this.user);
     }
 }
